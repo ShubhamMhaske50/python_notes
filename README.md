@@ -1,2 +1,4 @@
-# python_notes
-all python notes
+# python\_notes
+
+all my python notes here to access it quickly
+
