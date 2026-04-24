@@ -1,0 +1,202 @@
+full_name = "Alan Turing"
+
+# Define the generate_email function
+def generate_email(full_name):
+    name_parts = full_name.split()
+    email = name_parts[0].lower() + '.' + name_parts[1].lower() + '@techcompany.com'
+    
+    # Return the email address
+    return email
+
+# Call the function on the full_name string
+print(generate_email(full_name))
+
+____________________________________________________
+
+test_durations = [245.50, 189.99, 312.75, 156.20, 428.90, 201.35, 167.80]
+
+ # Complete the function
+def test_report(durations):
+    num_tests = len(durations)
+    
+    # Calculate total test time
+    total_time = sum(durations)
+    
+    print("=== Test Report ===")
+    print("Total Tests: ", num_tests)
+    print("Total Execution Time (s): ", total_time)
+
+# Generate the report for recent test runs
+print(test_report(test_durations))
+
+____________________________________________________
+
+def validate_password(password):
+    # Check if password is at least 8 characters long
+    if len(password) >= 8:
+        # Check if password contains a special character
+        for char in password:
+            if char in string.punctuation:
+                return True
+    return False
+
+# Call the function and store the result
+is_valid = validate_password(user_password)
+print("Is the password valid? ", is_valid)
+
+____________________________________________________
+
+product = 'Wireless Mouse'
+
+# Define clean_text function
+def clean_text(text, lower=True):
+    clean_text = text.replace(' ', '_')
+    if lower == False:
+        return clean_text
+    else:
+        # Apply lowercase transformation
+        return clean_text.lower()
+
+# Test with default behavior
+print(clean_text(product))
+
+____________________________________________________
+
+original_price = 899.99
+
+# Define the function with default arguments
+def calculate_discount(price, discount_percent=15, round_result=True):
+    discounted_price = price - (price * (discount_percent / 100))
+    
+    if round_result == True:
+        # Round the result to two decimal places
+        return round(discounted_price, 2)
+    else:
+        return discounted_price
+
+# Call the function with keyword arguments
+final_price = calculate_discount(price=original_price, discount_percent=25, round_result=False)
+print(final_price)
+
+____________________________________________________
+
+def calculate_discount(price, discount_percent=15, round_result=True):
+    # Add a single-line docstring
+    """Calculate the discounted price of a product."""
+    
+    discounted_price = price - (price * (discount_percent / 100))
+    if round_result == True:
+        return round(discounted_price, 2)
+    else:
+        return discounted_price
+
+# Access the docstring
+print(calculate_discount.__doc__)
+
+____________________________________________________
+
+def clean_text(text, lower=True):
+    # Add a multi-line docstring
+    """
+    Clean text by swapping spaces to underscores and converting to lowercase.
+    
+    Args:
+    	text (str): A string to be cleaned.
+    	lower (bool): Whether to convert the text to lowercase.
+    
+    Returns:
+    	text (str): Cleaned string.
+    """
+    clean_text = text.replace(' ', '_')
+    if lower == False:
+        return clean_text
+    else:
+        return clean_text.lower()
+      
+print(help(clean_text))
+
+____________________________________________________
+
+# Define a function called concat
+def concat(*args):
+  """Concatenates multiple string arguments with spaces between them."""
+
+  result = ""
+
+  # Iterate over the Python args tuple
+  for arg in args:
+    result += " " + arg
+  return result
+
+# Call the function
+print(concat("Python", "is", "great!"))
+
+____________________________________________________
+
+# Define a function called concat
+def concat(**kwargs):
+  """Concatenates keyword arguments into a single string with spaces."""
+  
+  result = ""
+  
+  # Iterate over the Python kwargs
+  for kwarg in kwargs.values():
+    result += " " + kwarg
+  return result
+
+# Call the function
+print(concat(start="Python", middle="is", end="great!"))
+
+____________________________________________________
+
+file_size = 2500
+extra_space = 0.15
+
+# Define a lambda function
+calculate_total = lambda x: x * (1 + extra_space)
+
+# Call the lambda function
+print(calculate_total(file_size))
+
+____________________________________________________
+
+file_size = 2500
+extra_space = 0.15
+
+# Call a lambda function in one line
+print((lambda x: x * (1 + extra_space))(file_size))
+
+____________________________________________________
+
+colleagues = ["Sarah Martinez", "Michael Chen", "Emily Brown"]
+
+# Apply the lambda function to each colleague's name
+cleaned = map(lambda x: x.replace(" ", "_").lower(), colleagues)
+
+# Convert map object to list
+cleaned_list = list(cleaned)
+print(cleaned_list)
+
+____________________________________________________
+
+def clean_text(text):
+  # Attempt to clean the text
+  try:
+    return text.replace(" ", "_").lower()
+  # Run this code if an error occurs
+  except:
+    print("The clean_text() function expects a string as an argument, please check the data type provided!")
+    
+clean_text(187)
+
+____________________________________________________
+
+def clean_text(text):
+  # Check the data type
+  if type(text) == str:
+    return text.replace(" ", "_").lower()
+  else:
+    # Return a TypeError error if the wrong data type was used
+    raise TypeError("The clean_text() function expects a string as an argument, please check the data type provided!")
+    
+clean_text("User Name 187")
